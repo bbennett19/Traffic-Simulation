@@ -1,12 +1,15 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour {
     public float topSpeed;
     public float acceleration;
     public float idleDeceleration;
     public float breakingDeceleration;
+    public Text speedText;
 
     private float currentSpeed = 0.0f;
     private Vector3 speedVector = new Vector3();
@@ -29,8 +32,15 @@ public class PlayerController : MonoBehaviour {
         {
             currentSpeed = Mathf.Max(0.0f, currentSpeed - idleDeceleration * Time.deltaTime);
         }
+
+        speedText.text = CalculateMPH(currentSpeed).ToString("0.00") + " MPH";
         
 	}
+
+    private float CalculateMPH(float currentSpeed)
+    {
+        return currentSpeed * 2.23694f;
+    }
 
     private void FixedUpdate()
     {
