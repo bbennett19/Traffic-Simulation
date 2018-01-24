@@ -24,8 +24,6 @@ public class MouseLook : MonoBehaviour {
         // Get mouse delta x and y values, these will be used as the degrees to rotate
         rotationX += Input.GetAxis("Mouse X") * sensitivityX;
         rotationY += Input.GetAxis("Mouse Y") * sensitivityY;
-        Debug.Log("X: " + rotationX.ToString());
-        Debug.Log("Y: " + rotationY.ToString());
         rotationX = ClampAngle(rotationX, minimumX, maximumX);
         rotationY = ClampAngle(rotationY, minimumY, maximumY);
         Quaternion xQuaternion = Quaternion.AngleAxis(rotationX, Vector3.up);

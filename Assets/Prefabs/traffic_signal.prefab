@@ -91,7 +91,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4734263830017228}
-  - component: {fileID: 114370141356432906}
   m_Layer: 0
   m_Name: lights
   m_TagString: Untagged
@@ -107,6 +106,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4130612803988034}
+  - component: {fileID: 114775407302426348}
   m_Layer: 0
   m_Name: traffic_signal
   m_TagString: Untagged
@@ -139,7 +139,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1878712678657152}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.427, y: 7.68, z: 8.82}
+  m_LocalPosition: {x: -0.183, y: 7.665, z: 71.700035}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4699192298949170}
@@ -458,20 +458,17 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &114370141356432906
+--- !u!114 &114775407302426348
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1822810833088434}
+  m_GameObject: {fileID: 1878712678657152}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3af86951f6e15cc4db8c6172f5d35b81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  greenTime: 5
-  yellowTime: 3
-  redTime: 5
   redMat: {fileID: 2100000, guid: 6c3fc75fa816d2643a8652d6d5c701f2, type: 2}
   greenMat: {fileID: 2100000, guid: 65abd190676bf4e4a96d32ef61704dad, type: 2}
   yellowMat: {fileID: 2100000, guid: 995d0f1e91a455440b32f53781282481, type: 2}
