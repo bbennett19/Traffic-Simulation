@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.5748172, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -113,6 +113,24 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &12891605 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1610265466720824, guid: 02e641040fb499c49a848e40f535164a,
+    type: 2}
+  m_PrefabInternal: {fileID: 1533734020}
+--- !u!114 &12891608
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 12891605}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b676438414414d88bce448d5ed677a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  max_speed: 11
+  acceleration: 3
 --- !u!1 &62312518
 GameObject:
   m_ObjectHideFlags: 0
@@ -1214,8 +1232,6 @@ MonoBehaviour:
   lightToPhase_0:
   - {fileID: 382195152}
   - {fileID: 495484668}
-  - {fileID: 1835706846}
-  - {fileID: 1425948385}
   - {fileID: 1434742944}
   - {fileID: 387978747}
   lightToPhase_1:
@@ -1223,7 +1239,9 @@ MonoBehaviour:
   - {fileID: 396894720}
   - {fileID: 142677376}
   - {fileID: 1251986655}
-  lightToPhase_2: []
+  lightToPhase_2:
+  - {fileID: 1835706846}
+  - {fileID: 1425948385}
   lightToPhase_3: []
 --- !u!4 &756323645
 Transform:
@@ -1232,7 +1250,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 756323643}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 6.2, z: 1.6}
+  m_LocalPosition: {x: 0, y: 6.2, z: 65.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

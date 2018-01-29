@@ -13,9 +13,10 @@ public class IntersectionController : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        m_phases = new IntersectionPhase[2];
+        m_phases = new IntersectionPhase[3];
         m_phases[0] = new IntersectionPhase(10f, 3f, 0, 1, lightToPhase_0);
-        m_phases[1] = new IntersectionPhase(10f, 3f, 1, 0, lightToPhase_1);
+        m_phases[1] = new IntersectionPhase(10f, 3f, 1, 2, lightToPhase_1);
+        m_phases[2] = new IntersectionPhase(10f, 3f, 2, 0, lightToPhase_2);
         m_phases[m_currentPhase].SetPhaseState(PhaseState.ACTIVE);
     }
 
