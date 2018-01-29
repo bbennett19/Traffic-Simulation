@@ -14,7 +14,7 @@ public class StoplightController : MonoBehaviour {
     public GameObject redLight;
 
 	// Use this for initialization
-	void Start () {
+	void Awake () {
         greenLight.GetComponent<Renderer>().material = offMat;
         yellowLight.GetComponent<Renderer>().material = offMat;
         redLight.GetComponent<Renderer>().material = redMat;
