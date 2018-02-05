@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -10,7 +11,7 @@ public class IntersectionController : MonoBehaviour {
     public StoplightController[] lightToPhase_1;
     public StoplightController[] lightToPhase_2;
     public StoplightController[] lightToPhase_3;
-
+    public float stop_z;
     // Use this for initialization
     void Start () {
         m_phases = new IntersectionPhase[3];
@@ -39,4 +40,9 @@ public class IntersectionController : MonoBehaviour {
         }
 		
 	}
+
+    internal IntersectionPhase GetPhase(Vector3 direction)
+    {
+        return m_phases[2];
+    }
 }
