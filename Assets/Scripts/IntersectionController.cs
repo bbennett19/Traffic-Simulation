@@ -12,6 +12,8 @@ public class IntersectionController : MonoBehaviour {
     public StoplightController[] lightToPhase_2;
     public StoplightController[] lightToPhase_3;
     public float stop_z;
+    public float stop_x;
+    public PhoneController phoneController;
     // Use this for initialization
     void Start () {
         m_phases = new IntersectionPhase[3];
@@ -40,6 +42,36 @@ public class IntersectionController : MonoBehaviour {
         }
 		
 	}
+
+    internal void CheckCar(CarController c)
+    {
+        if(c.transform.forward.x > 0f)
+        {
+            
+            float dist = Mathf.Abs(c.transform.position.x - stop_x);
+            float stop_dist = (c.GetCurrentSpeed() * c.GetCurrentSpeed()) / (2f * c.deceleration);
+
+            if(stop_dist - dist >= 0.5f)
+            {
+                //warn biker
+                phoneController.Warn();
+            }
+
+        }
+        else if(c.transform.forward.z > 0f)
+        {
+
+            float dist = Mathf.Abs(c.transform.position.x - stop_z);
+            float stop_dist = (c.GetCurrentSpeed() * c.GetCurrentSpeed()) / (2f * c.deceleration);
+
+            if (stop_dist - dist >= 0.5f)
+            {
+                //warn biker
+                phoneController.Warn();
+            }
+
+        }
+    }
 
     internal IntersectionPhase GetPhase(Vector3 direction)
     {

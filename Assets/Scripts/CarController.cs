@@ -16,6 +16,7 @@ public class CarController : MonoBehaviour {
     private bool m_inIntersection = false;
     private bool m_slowingDown = false;
     private IntersectionPhase m_phase = null;
+    public bool runRed = false;
     private void Start()
     {
         m_currentSpeed = start_speed;
@@ -27,13 +28,15 @@ public class CarController : MonoBehaviour {
         {
             m_currentSpeed = m_carController.GetCurrentSpeed();
         }
-        else if (m_inIntersection)
+        else if (m_inIntersection && !runRed)
         {            
             if (!m_slowingDown)
             {
                 float stop_dist = Mathf.Abs(transform.position.z - m_intController.stop_z);
                 float actual_stop_dist = (m_currentSpeed * m_currentSpeed) / (2f * deceleration);
-                m_slowingDown = true;
+      
+                if(stop_dist <= actual_stop_dist)
+                    m_slowingDown = true;
             }
             else
             {
@@ -60,6 +63,11 @@ public class CarController : MonoBehaviour {
             }
         }
 
+        if(m_inIntersection)
+        {
+            m_intController.CheckCar(this);
+        }
+
     }
 
     // Update is called once per frame
@@ -70,7 +78,6 @@ public class CarController : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log(other.tag);
         if(other.CompareTag("Intersection"))
         {
             m_intController = other.GetComponent<IntersectionController>();
